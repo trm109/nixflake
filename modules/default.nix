@@ -4,5 +4,7 @@
     ./core
     ./hardware
     ./hyprland
+    ./ssh
+    ./fun
   ];
 }

@@ -32,5 +32,7 @@
     jq
     neovim
     gh
+    bat
+    tre-command
   ];
 }

@@ -1,12 +1,12 @@
 { pkgs, home-manager, username, ... }:
 {
-  programs.fish = {
-    interactiveShellInit = ''
-      nitch
-    '';
-    shellAliases = {
-      upd = "sudo nixos-rebuild switch --flake .";
-      gitac = "git add -A && git commit -m $ARGV";
+  home-manager.users.${username} = _: {
+    programs.fish = {
+      enable = true;
     };
+    # home.file.".config/fish/" = {
+    #   recursive = true;
+    #   source = ../../../../dotfiles/fish;
+    # };
   };
 }

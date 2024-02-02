@@ -51,10 +51,4 @@
     };
   };
   
-  home-manager.users.${username} = _: {
-    home.file.".config/hypr/" = {
-      recursive = true;
-      source = ../../dotfiles/hypr;
-    };
-  };
 }

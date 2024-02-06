@@ -1,0 +1,5 @@
+#!/bin/sh
+
+CONFIG="$HOME/.config/swaylock/config"
+
+sleep 0.5; swaylock --config ${CONFIG} & disown

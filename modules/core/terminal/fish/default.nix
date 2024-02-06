@@ -4,9 +4,5 @@
     programs.fish = {
       enable = true;
     };
-    # home.file.".config/fish/" = {
-    #   recursive = true;
-    #   source = ../../../../dotfiles/fish;
-    # };
   };
 }

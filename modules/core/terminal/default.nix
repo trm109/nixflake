@@ -10,9 +10,8 @@
   # Home Configuration
   home-manager.users.${username} = {
     #programs.git.enable = true;
-    programs.vim.enable = true;
+    #programs.vim.enable = true;
   };  
-  
   # System-Wide Configurations
   programs = {
     mtr.enable = true;
@@ -21,6 +20,7 @@
 
   # Default packages related to terminal
   environment.systemPackages = with pkgs; [
+    vim
     btop
     neofetch
     nitch
@@ -34,5 +34,6 @@
     gh
     bat
     tre-command
+    stow
   ];
 }

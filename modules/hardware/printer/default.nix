@@ -7,7 +7,6 @@
       openFirewall = true;
     };
   };
-  
   #UTech Printer
   hardware.printers = {
     ensurePrinters = [

@@ -9,4 +9,7 @@
 
   # Enable ssh
   services.openssh.enable = true;
+
+  # Reduces startup time ??
+  systemd.network.wait-online.enable = false;
 }

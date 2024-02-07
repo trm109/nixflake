@@ -15,14 +15,18 @@
     };
 
     systemPackages = with pkgs; [
-      grim
-      slurp
       hyprpaper
       hyprpicker
-      lxqt.lxqt-policykit
+
+      grim
+      slurp
+
       wl-clipboard
-      xdg-utils
       brightnessctl
+      libnotify
+
+      lxqt.lxqt-policykit
+      xdg-utils
     ];
   };
 

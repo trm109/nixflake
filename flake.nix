@@ -62,6 +62,7 @@
 
 	    modules = [
 	      ./.
+
 	      ./modules/apps
 	      ./modules/apps/fun
 	      ./modules/apps/fun/steam

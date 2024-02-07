@@ -27,21 +27,24 @@
     in
     {
       nixosConfigurations = {
-	home-server = 
+	mac-mini = 
 	  let
 	    system = "x86_64-linux";  
 	  in nixpkgs.lib.nixosSystem {
 	    specialArgs = {
 	      username = "saik";
-	      hostname = "home-server";
+	      hostname = "mac-mini";
 	      hyprlandConfig = "desktop";
+	      #nvidia = false;
+	      #wayland = true;
+	      #gamingHost = true;
 	      inherit system;
 	    } // attrs;
 	    
 	    modules = [
 	      ./.
 	    ];
-	  }; # home-server
+	  }; # mac mini
       };
 
       devShells = forAllSystems (system:

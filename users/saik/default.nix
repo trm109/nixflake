@@ -26,7 +26,7 @@
   home-manager.users.${username} = {config, lib, ...}: {
     home = {
       packages = with pkgs; [
-	gitAndTools.gh
+	gh
 	git-lfs
 	git
 	fish

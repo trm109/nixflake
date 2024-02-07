@@ -2,9 +2,15 @@
 {
   #environment.systemPackages = with pkgs; [ lutris ];
 
-  # This can optionally be installed via flatpack. 
-  # Proton Experimental is pretty sweet
   programs = {
-    steam.enable = true;
+    steam = {
+      enable = true;
+    };
   };
+
+  # Enable Mesa Drivers
+  hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
+
+  # Input Remapper
+  services.input-remapper.enable = true;
 }

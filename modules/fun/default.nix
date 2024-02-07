@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ lib, gamingHost, pkgs, ... }:
 {
   imports = [
-    ./steam
+    #(lib.mkIf gamingHost (./steam))
   ];
   environment.systemPackages = with pkgs; [
     stremio

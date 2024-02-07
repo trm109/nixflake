@@ -68,7 +68,7 @@
 
 	      ./modules/hyprland
 
-	      ./modules/developement
+	      ./modules/development
 	      
 	      ./modules/hardware/asus
 	      ./modules/hardware/nvidia

@@ -1,10 +1,9 @@
 {
   imports = [
-    ./apps
+    #./apps
     ./core
     ./hardware
-    ./hyprland
-    ./ssh
-    ./fun
+    #./hyprland
+    #./development
   ];
 }

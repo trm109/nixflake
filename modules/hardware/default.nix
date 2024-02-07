@@ -1,8 +1,11 @@
 { ... }:
 {
   imports = [
+    #./asus # For Asus devices
+    ./audio
     ./bluetooth
     ./network
-    ./audio
+    #./nvidia # For devices with NVIDIA GPUs
+    #./printer # For devices with printing capabilities.
   ];
 }

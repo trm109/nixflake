@@ -5,5 +5,6 @@
     ./boot
     ./security
     ./pkgs
+    ./ssh
   ];
 }

@@ -43,6 +43,9 @@
 	    
 	    modules = [
 	      ./.
+	      ./modules/hyprland
+	      ./modules/apps
+	      ./modules/apps/fun
 	    ];
 	  }; # mac mini
       };

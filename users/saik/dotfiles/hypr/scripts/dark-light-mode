@@ -2,7 +2,7 @@
 set -x
 # Define the path
 wallpaper_path="$HOME/Pictures/wallpapers/Dynamic-Wallpapers"
-hypr_config_path="$HOME/.config"
+config_path="$HOME/.config"
 
 pkill swaybg
 
@@ -29,7 +29,7 @@ fi
 path_param=$(echo $next_mode | sed 's/.*/\u&/')
 
 notify_user "$next_mode"
-ln -sf "${hypr_config_path}/waybar/style/style-${next_mode}.css" "${hypr_config_path}/waybar/style.css"
+ln -sf "${config_path}/waybar/style/style-${next_mode}.css" "${config_path}/waybar/style.css"
 
 # Find the next wallpaper if one exists
 current_wallpaper="$(cat ~/.current_wallpaper)"

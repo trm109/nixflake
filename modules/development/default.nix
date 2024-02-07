@@ -13,7 +13,7 @@
     android-tools
 
     # Libs needed for apps in general (for repo specific, use shell.nix)
-    nodesjs_21
+    nodejs_21
     jdk17
     cmake
     python3

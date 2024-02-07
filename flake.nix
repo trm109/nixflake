@@ -48,6 +48,33 @@
 	      ./modules/apps/fun
 	    ];
 	  }; # mac mini
+	
+	asus-flow = 
+	  let
+	    system = "x86_64-linux";  
+	  in nixpkgs.lib.nixosSystem {
+	    specialArgs = {
+	      username = "saik";
+	      hostname = "asus-flow";
+	      hyprlandConfig = "desktop";
+	      inherit system;
+	    } // attrs;
+
+	    modules = [
+	      ./.
+	      ./modules/apps
+	      ./modules/apps/fun
+	      ./modules/apps/fun/steam
+
+	      ./modules/hyprland
+
+	      ./modules/developement
+	      
+	      ./modules/hardware/asus
+	      ./modules/hardware/nvidia
+	      ./modules/hardware/printer
+	    ];
+	  }; # asus flow
       };
 
       devShells = forAllSystems (system:

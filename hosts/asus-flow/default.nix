@@ -7,4 +7,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   # CPU/GPU Undervolting
   #programs.corectrl.enable = true;
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=5s
+    '';
 }

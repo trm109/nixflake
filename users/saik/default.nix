@@ -12,7 +12,6 @@
   let
     dotsDir = "/etc/nixos/users/saik/dotfiles";
     confs = [
-      "fish"
       "kitty"
       "hypr"
       "mako"

@@ -5,4 +5,6 @@
   # Use systemd-boot EFI boot loader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # CPU/GPU Undervolting
+  #programs.corectrl.enable = true;
 }

@@ -22,7 +22,8 @@
   environment.systemPackages = with pkgs; [
     vim
     btop
-    neofetch
+    #neofetch
+    fastfetch
     nitch
     tree
     wget

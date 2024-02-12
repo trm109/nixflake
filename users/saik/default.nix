@@ -25,22 +25,35 @@
   home-manager.users.${username} = {config, lib, ...}: {
     home = {
       packages = with pkgs; [
-	gh
-	git-lfs
-	git
-	fish
-	kitty
-	hypr
-	mako
-	swaylock
-	waybar
-	wofi
+        gh
+          git-lfs
+          git
+          fish
+          kitty
+          hypr
+          mako
+          swaylock
+          waybar
+          wofi
 
-	neovim
-	neofetch
-	#input-remapper-2
+          neovim
+          neofetch
+      gtk3
+#input-remapper-2
       ];
 # https://discourse.nixos.org/t/deploy-files-into-home-directory-with-home-manager/24018/2
+    };
+    gtk = {
+      enable = true;
+      theme = {
+        name = "Catppuccin-Mocha-Compact-Mauve";
+        package = pkgs.catppuccin-gtk.override {
+          accents = [ "mauve" ];
+          size = "compact";
+          tweaks = [ "rimless" ];
+          variant = "mocha";
+        };
+      };
     };
   };
 }

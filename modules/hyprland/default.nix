@@ -27,9 +27,18 @@
 
       lxqt.lxqt-policykit
       xdg-utils
+
+      # Theming
+      gtk3
+      #gnome.gnome-themes-extra
+      #(catppuccin-gtk.override {
+      #  accents = [ "mauve" ]; # You can specify multiple accents here to output multiple themes
+      #  size = "compact";
+      #  tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
+      #  variant = "mocha";
+      #})
     ];
   };
-
   programs = {
     hyprland = {
       enable = true;
@@ -49,8 +58,8 @@
     enable = true;
     config = {
       common = {
-	default = [ "xdph" "gtk" ];
-	"org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+        default = [ "xdph" "gtk" ];
+        "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
       };
     };
   };

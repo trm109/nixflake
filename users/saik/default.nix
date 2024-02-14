@@ -26,19 +26,19 @@
     home = {
       packages = with pkgs; [
         gh
-          git-lfs
-          git
-          fish
-          kitty
-          hypr
-          mako
-          swaylock
-          waybar
-          wofi
+        git-lfs
+        git
+        fish
+        kitty
+        hypr
+        mako
+        swaylock
+        waybar
+        wofi
 
-          neovim
-          neofetch
-      gtk3
+        neovim
+        neofetch
+        bc
 #input-remapper-2
       ];
 # https://discourse.nixos.org/t/deploy-files-into-home-directory-with-home-manager/24018/2
@@ -54,6 +54,10 @@
           variant = "mocha";
         };
       };
+    };
+    dconf = {
+      enable = true;
+      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
   };
 }

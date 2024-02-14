@@ -30,7 +30,7 @@
 
       # Theming
       gtk3
-      #gnome.gnome-themes-extra
+      gnome.gnome-themes-extra
       #(catppuccin-gtk.override {
       #  accents = [ "mauve" ]; # You can specify multiple accents here to output multiple themes
       #  size = "compact";

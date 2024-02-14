@@ -25,7 +25,8 @@
     #neofetch
     fastfetch
     nitch
-    tree
+    #tree
+    tre-command
     wget
     curl
     zip

@@ -5,6 +5,7 @@
     ./browser
     ./art
     ./school
+    ./file_explorer
     #./fun
     #./virtualisation
   ];

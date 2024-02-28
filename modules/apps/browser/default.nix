@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 let 
   cfg = config.modules.apps.browser;
 in
@@ -10,6 +10,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      chromium
+    ];
     programs = {
       chromium = {
 	enable = true;

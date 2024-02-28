@@ -1,4 +1,4 @@
-{ lib, config, pkgs, home-manager, username, ... }:
+{ lib, config, ... }:
 let 
   cfg = config.modules.apps.browser;
 in

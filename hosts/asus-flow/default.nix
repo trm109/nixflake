@@ -15,7 +15,8 @@
   modules.apps.fun.steam.enable = true;
   ### Minecraft
   modules.apps.fun.minecraft.enable = true;
-  
+  ### Browser
+  modules.apps.browser.enable = true;
   ## Core
 
   ## Desktops

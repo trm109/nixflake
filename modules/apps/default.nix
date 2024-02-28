@@ -3,11 +3,11 @@
 {
   # Default Applications here.
   imports = [
+    ./art
     ./browser
     ./file_explorer
-    ./art
     ./fun
-    ./work
     ./virtualisation
+    ./work
   ];
 }

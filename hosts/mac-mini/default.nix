@@ -2,7 +2,20 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  ## Apps
+  ### Steam
+  modules.apps.fun.steam.enable = true;
+  ### Minecraft
+  modules.apps.fun.minecraft.enable = true;
+  
+  ## Core
+
+  ## Desktops
+  ### Hyprland
+  modules.desktop.hyprland.enable = true;
+
+  ## Development
+  modules.development.enable = true;
+  
+  ## Hardware
 }

@@ -2,7 +2,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules
     # Apps (Standard + Fun + Steam)
     # Hyprland
     # Development
@@ -10,6 +9,7 @@
     # Nvidia
     # Printer
   ];
+
   ## Apps
   ### Steam
   modules.apps.fun.steam.enable = true;

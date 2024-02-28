@@ -43,9 +43,6 @@
 	    
 	    modules = [
 	      ./.
-	      ./modules/hyprland
-	      ./modules/apps
-	      ./modules/apps/fun
 	    ];
 	  }; # mac mini
 	
@@ -62,18 +59,6 @@
 
 	    modules = [
 	      ./.
-
-	      ./modules/apps
-	      ./modules/apps/fun
-	      ./modules/apps/fun/steam
-
-	      ./modules/hyprland
-
-	      ./modules/development
-	      
-	      ./modules/hardware/asus
-	      ./modules/hardware/nvidia
-	      ./modules/hardware/printer
 	    ];
 	  }; # asus flow
       };

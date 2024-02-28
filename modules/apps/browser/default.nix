@@ -1,31 +1,29 @@
-{ pkgs, home-manager, username, ... }:
+{ lib, config, pkgs, home-manager, username, ... }:
+let 
+  cfg = config.modules.apps.browser;
+in
 {
-  #----- Home Manager Config -----
-  home-manager.users.${username} = {
-
-    home.sessionVariables = {
-      MOZ_ENABLE_WAYLAND = 1;
+  options.modules.apps.browser = {
+    enable = lib.mkEnableOption "Enables browser" // {
+      default = true;
     };
-    programs.chromium.enable = true;
   };
 
-  #----- System Configuration -----
-  #programs = {
-  #};
-  programs = {
-    chromium = {
-      enable = true;
-      extraOpts = {
-        "BrowserSignin" = 1;
-        "SyncDisabled" = false;
-        #"PasswordManagerEnabled" = false;
-        "SpellcheckEnabled" = true;
-        "SpellcheckLanguage" = [ "en-US" ];
+  config = lib.mkIf cfg.enable {
+    programs = {
+      chromium = {
+	enable = true;
+	extraOpts = {
+	  "BrowserSignin" = 1;
+	  "SyncDisabled" = false;
+	  #"PasswordManagerEnabled" = false;
+	  "SpellcheckEnabled" = true;
+	  "SpellcheckLanguage" = [ "en-US" ];
+	};
+	extensions = [
+	  "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+	];
       };
-      extensions = [
-        "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
-      ];
     };
-    #firefox.enable = true;
   };
 }

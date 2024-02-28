@@ -1,15 +1,13 @@
-{ pkgs, home-manager, username, ... }:
+# modules/apps/default.nix
+{ ... }:
 {
   # Default Applications here.
   imports = [
     ./browser
-    ./art
-    ./school
     ./file_explorer
-    #./fun
-    #./virtualisation
-  ];
-  environment.systemPackages = with pkgs; [
-    
+    ./art
+    ./fun
+    ./work
+    ./virtualisation
   ];
 }

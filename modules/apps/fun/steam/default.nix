@@ -1,21 +1,28 @@
-{ pkgs, username, ... }:
+{ lib, config, pkgs, username, ... }:
+let
+  cfg = config.modules.apps.fun.steam;
+in
 {
-  #environment.systemPackages = with pkgs; [ lutris ];
+  options.modules.apps.fun.steam = {
+    enable = lib.mkEnableOption "Enables Steam and Steam Tweaks";
+  };
 
-  # Steam
-  programs.steam.enable = true;
+  config = lib.mkIf cfg.enable {
+    # Steam
+    programs.steam.enable = true;
 
-  # Enable Mesa Drivers
-  hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
+    # Enable Mesa Drivers
+    hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
 
-  # Input Remapper
-  services.input-remapper.enable = true;
-  
-  # Gamemode
-  programs.gamemode.enable = true;
+    # Input Remapper
+    services.input-remapper.enable = true;
+    
+    # Gamemode
+    programs.gamemode.enable = true;
 
-  # Extra packages
-  environment.systemPackages = with pkgs; [
-    mangohud
-  ];
+    # Extra packages
+    environment.systemPackages = with pkgs; [
+      mangohud
+    ];
+  };
 }

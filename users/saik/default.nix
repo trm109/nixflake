@@ -1,5 +1,5 @@
 # users/saik/default.nix
-{ lib, system, pkgs, username, ...}:
+{ config, lib, system, pkgs, username, ...}:
 {
 # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.saik = {
@@ -41,23 +41,28 @@
         bc
 #input-remapper-2
       ];
+      #sessionVariables.GTK_THEME = "Catppuccin-Mocha-Standard-Blue-dark";
 # https://discourse.nixos.org/t/deploy-files-into-home-directory-with-home-manager/24018/2
     };
     gtk = {
       enable = true;
       theme = {
-        name = "Catppuccin-Mocha-Compact-Mauve";
+	#name = "Adwaita-dark";
+	#package = pkgs.gnome.gnome-themes-extra;
+        name = "Catppuccin-Mocha-Compact-Mauve-Dark";
         package = pkgs.catppuccin-gtk.override {
-          accents = [ "mauve" ];
-          size = "compact";
-          tweaks = [ "rimless" ];
-          variant = "mocha";
-        };
+	  accents = [ "mauve" ];
+	  size = "compact";
+	  tweaks = [ "rimless" ];
+	  variant = "mocha";
+	};
       };
     };
+
     dconf = {
       enable = true;
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
   };
+  #systemd.user.sessionVariables = config.home-manager.users.${username}.home.sessionVariables;
 }

@@ -116,6 +116,7 @@
 
     "hyprland/workspaces": {
       "format": "{name}",
+      "separate-outputs": true,
       //"format": "{name}: {icon}",
       //"format": "{icon}",
       "show-special": false,

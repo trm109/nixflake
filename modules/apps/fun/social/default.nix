@@ -1,10 +1,17 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
+let
+  cfg = config.modules.apps.fun.social;
+in
 {
-  environment.systemPackages = with pkgs; [
-    discord
-  ];
-  #systemd.shutdown."force_kill_discord.sh" = pkgs.writeScript "force_kill_discord.sh" ''
-  #    #!/bin/sh
-  #    pkill .Discord-wrappe
-  #  ''; 
+  options.modules.apps.fun.social = {
+    enable = lib.mkEnableOption "Enables social apps" // {
+      default = true;
+    };
+  };
+
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      discord
+    ];
+  };
 }

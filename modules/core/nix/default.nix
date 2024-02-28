@@ -26,4 +26,9 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-19.1.9"
   ];
+
+  # Automatically perform nix garbage collection
+  nix.gc.automatic = true;
+  # Automatically deduplicate nix store
+  nix.settings.auto-optimise-store = true;
 }

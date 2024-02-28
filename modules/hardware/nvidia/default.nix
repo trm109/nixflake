@@ -1,22 +1,30 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
+let 
+  cfg = config.modules.hardware.nvidia;
+in
 {
-  # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+  options.modules.hardware.nvidia = {
+    enable = lib.mkEnableOption "Enable Nvidia Support";
   };
-  
-  services.xserver.videoDrivers = [ "amdgpu" "nvidia"];
-  
-  hardware.nvidia = {
+  config = lib.mkIf cfg.enable {
+    # Enable OpenGL
+    hardware.opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+    # enable x server drivers
+    services.xserver.videoDrivers = [ "amdgpu" "nvidia"];
+    # Enable kernel and drivers
+    hardware.nvidia = {
 
-    modesetting.enable = true;
+      modesetting.enable = true;
 
-    nvidiaSettings = true;
+      nvidiaSettings = true;
 
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+      package = config.boot.kernelPackages.nvidiaPackages.production;
+    };
+    # for specific app gpu control
+    services.switcherooControl.enable = true;
   };
-
-  services.switcherooControl.enable = true;
 }

@@ -1,16 +1,27 @@
-{ hostname, username, ...}:
+{ lib, config, hostname, username, ...}:
+let
+  cfg = config.modules.hardware.network;
+in
 {
-  # Network
-  networking = {
-    hostName = "${hostname}";
-    networkmanager.enable = true;
-    nameservers = [ "8.8.8.8" "8.8.4.4" ];
+  options.modules.hardware.network = {
+    enable = lib.mkEnableOption "Enables Networking" // {
+      default = true;
+    };
   };
 
-  # Enable ssh
-  services.openssh.enable = true;
+  config = lib.mkIf cfg.enable {
+    # Network
+    networking = {
+      hostName = "${hostname}";
+      networkmanager.enable = true;
+      nameservers = [ "8.8.8.8" "8.8.4.4" ];
+    };
 
-  # Reduces startup time ??
-  #systemd.network.wait-online.enable = false;
-  systemd.services.NetworkManager-wait-online.enable = false;
+    # Enable ssh
+    services.openssh.enable = true;
+
+    # Reduces startup time ??
+    #systemd.network.wait-online.enable = false;
+    systemd.services.NetworkManager-wait-online.enable = false;
+  };
 }

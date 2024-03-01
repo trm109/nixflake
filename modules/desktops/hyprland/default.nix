@@ -1,4 +1,4 @@
-{ lib, config, hyprland, pkgs, username, ... }:
+{ lib, config, hyprland, pkgs, username, hostType, ... }:
 let
   cfg = config.modules.desktop.hyprland;
 in
@@ -13,7 +13,9 @@ in
 
   options.modules.desktop.hyprland = {
     enable = lib.mkEnableOption "Enables Hyprland" // {
-      default = true;
+      default = if hostType == "desktop" then true
+      	else if hostType == "server" then false
+	else true;
     };
   };
 

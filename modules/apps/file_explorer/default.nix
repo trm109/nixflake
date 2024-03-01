@@ -1,12 +1,14 @@
 # /etc/nixos/modules/apps/file_explorer/default.nix
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, hostType, ... }:
 let
   cfg = config.modules.apps.fileExplorer;
 in
 {
   options.modules.apps.fileExplorer = {
     enable = lib.mkEnableOption "Enables the Thunar File Explorer" // {
-      default = true;
+      default = if hostType == "desktop" then true
+	else if hostType == "server" then false
+	else true;
     };
   };
 

@@ -1,11 +1,13 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, hostType, ... }:
 let 
   cfg = config.modules.apps.browser;
 in
 {
   options.modules.apps.browser = {
     enable = lib.mkEnableOption "Enables browser" // {
-      default = true;
+      default = if hostType == "desktop" then true
+	else if hostType == "server" then false
+	else true;
     };
   };
 

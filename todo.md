@@ -1,0 +1,2 @@
+- Switchable 'Performance' 'Hybrid' 'Efficience' modes for Asus module
+- 'Server' 'Desktop' 'Laptop' presets using specialArgs

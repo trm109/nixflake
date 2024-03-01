@@ -3,6 +3,4 @@
   imports = [
     ./hardware-configuration.nix
   ];
-
-  modules.development.enable = true;
 }

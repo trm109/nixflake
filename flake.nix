@@ -34,10 +34,6 @@
 	    specialArgs = {
 	      username = "saik";
 	      hostname = "mac-mini";
-	      hyprlandConfig = "desktop";
-	      #nvidia = false;
-	      #wayland = true;
-	      #gamingHost = true;
 	      inherit system;
 	    } // attrs;
 	    
@@ -53,7 +49,7 @@
 	    specialArgs = {
 	      username = "saik";
 	      hostname = "asus-flow";
-	      hyprlandConfig = "desktop";
+	      hostType = "desktop";
 	      inherit system;
 	    } // attrs;
 
@@ -69,6 +65,7 @@
 	    specialArgs = {
 	      username = "saik";
 	      hostname = "optipleximus-prime";
+	      hostType = "server";
 	      inherit system;
 	    } // attrs;
 	    

@@ -1,10 +1,14 @@
-{ lib, config, ... }:
+{ lib, config, hostType, ... }:
 let
   cfg = config.modules.hardware.printers;
 in
 {
   options.modules.hardware.printers = {
-    enable = lib.mkEnableOption "Enable printer support";
+    enable = lib.mkEnableOption "Enable printer support" // {
+      default = if hostType == "desktop" then true
+	else if hostType == "server" then false
+	else true;
+    };
   };
 
   config = lib.mkIf cfg.enable {

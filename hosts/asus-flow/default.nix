@@ -29,6 +29,7 @@
   ### Asus Specific
   modules.hardware.asus.enable = true;
   ### Nvidia (CONDITIONAL, specialisation based)
+  modules.hardware.nvidia.enable = lib.mkDefault true;
   ### Printers
   modules.hardware.printers.enable = true;
 

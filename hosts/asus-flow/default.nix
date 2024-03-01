@@ -35,6 +35,8 @@
 
 
   # Specialisations
+  ## TODO Add in RyzenAdj perf stuff
+  ## TODO Validate supergfx mods
   specialisation = {
     # Plugged in, high performance, high power draw.
     performance.configuration = {

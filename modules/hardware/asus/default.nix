@@ -5,6 +5,9 @@ in
 {
   options.modules.hardware.asus = {
     enable = lib.mkEnableOption "Enables Asus Specific Tweaks";
+    mode = lib.mkOption {
+      default = "hybrid";
+    };
   };
   config = lib.mkIf cfg.enable {
     # Enable supergfxd

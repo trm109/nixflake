@@ -61,6 +61,21 @@
 	      ./.
 	    ];
 	  }; # asus flow
+	
+	optipleximus-prime =
+	  let
+	    system = "x86_64-linux";
+	  in nixpkgs.lib.nixosSystem {
+	    specialArgs = {
+	      username = "saik";
+	      hostname = "optipleximus-prime";
+	      inherit system;
+	    } // attrs;
+	    
+	    modules = [
+	      ./.
+	    ];
+	  }; # optipleximus-prime
       };
 
       devShells = forAllSystems (system:

@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, ... }:
+{ config, lib, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -28,8 +28,27 @@
   ## Hardware
   ### Asus Specific
   modules.hardware.asus.enable = true;
-  ### Nvidia
-  modules.hardware.nvidia.enable = true;
+  ### Nvidia (CONDITIONAL, specialisation based)
   ### Printers
   modules.hardware.printers.enable = true;
+
+
+  # Specialisations
+  specialisation = {
+    # Plugged in, high performance, high power draw.
+    performance.configuration = {
+      system.nixos.tags = [ "performance" ];
+      modules.hardware.nvidia.enable = true;
+    };
+    # Hybrid configuration, med performance, med power draw.
+    hybrid.configuration = {
+      system.nixos.tags = [ "hybrid" ];
+      modules.hardware.nvidia.enable = true;
+    };
+    # Low power, high efficiency
+    efficience.configuration = {
+      system.nixos.tags = [ "efficience" ];
+      modules.hardware.nvidia.enable = false;
+    };
+  };
 }

@@ -7,5 +7,6 @@
     ./network
     ./nvidia # For devices with NVIDIA GPUs
     ./printer # For devices with printing capabilities.
+    ./firmware # For installing firmware / firmware updates
   ];
 }

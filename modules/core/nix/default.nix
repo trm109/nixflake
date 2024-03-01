@@ -31,4 +31,7 @@
   nix.gc.automatic = true;
   # Automatically deduplicate nix store
   nix.settings.auto-optimise-store = true;
+
+  # Enable dconf by default
+  programs.dconf.enable = true;
 }

@@ -73,6 +73,23 @@
 	      ./.
 	    ];
 	  }; # optipleximus-prime
+
+	think-centre =
+	  let
+	    system = "x86_64-linux";
+	  in nixpkgs.lib.nixosSystem {
+	    specialArgs = {
+	      username = "saik";
+	      hostname = "think-centre";
+	      hostType = "server";
+	      inherit system;
+	    } // attrs;
+	    
+	    modules = [
+	      ./.
+	    ];
+	  }; # think-centre
+	
       };
 
       devShells = forAllSystems (system:

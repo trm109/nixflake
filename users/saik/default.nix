@@ -58,11 +58,6 @@
 	};
       };
     };
-
-    dconf = {
-      enable = true;
-      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    };
   };
   #systemd.user.sessionVariables = config.home-manager.users.${username}.home.sessionVariables;
 }

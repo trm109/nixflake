@@ -36,6 +36,7 @@
     gh
     bat
     tre-command
-    stow
+    tldr
+    eza
   ];
 }

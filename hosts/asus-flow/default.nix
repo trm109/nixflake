@@ -56,8 +56,10 @@
   modules.hardware.nvidia.enable = lib.mkDefault true;
   ### Printers
   modules.hardware.printers.enable = true;
-
-
+  
+  ## Faster builds?
+  boot.tmp.useTmpfs = true;
+	
   # Specialisations
   ## TODO Add in RyzenAdj perf stuff
   ## TODO Validate supergfx mods

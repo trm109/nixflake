@@ -19,6 +19,8 @@ in
 
     # Reduces startup time ??
     #systemd.network.wait-online.enable = false;
-    systemd.services.NetworkManager-wait-online.enable = false;
+    #systemd.services.NetworkManager-wait-online.enable = false;
+    systemd.targets.network-online.wantedBy = lib.mkForce []; # Normally ["multi-user.target"]
+    systemd.services.NetworkManager-wait-online.wantedBy = lib.mkForce []; # Normally ["network-online.target"]
   };
 }

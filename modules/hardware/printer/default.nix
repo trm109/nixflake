@@ -31,5 +31,8 @@ in
         }
       ];
     };
+    #systemd.targets.ensure-printers.wantedBy = pkgs.lib.mkForce [];
+    systemd.services.ensure-printers.wantedBy = lib.mkForce [];
+
   };
 }

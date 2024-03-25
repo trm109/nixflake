@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ pkgs, config, lib, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -80,4 +80,7 @@
       modules.hardware.nvidia.enable = false;
     };
   };
+  environment.systemPackages = with pkgs; [
+    ryzenadj
+  ];
 }

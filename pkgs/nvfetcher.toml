@@ -1,0 +1,4 @@
+# nvfetcher.toml
+[ryzen_smu]
+src.git = "https://gitlab.com/leogx9r/ryzen_smu.git"
+fetch.git = "https://gitlab.com/leogx9r/ryzen_smu.git"

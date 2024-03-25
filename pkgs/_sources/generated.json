@@ -1,0 +1,21 @@
+{
+    "ryzen_smu": {
+        "cargoLocks": null,
+        "date": "2023-06-16",
+        "extract": null,
+        "name": "ryzen_smu",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "e61177d0ddaebfaeca52094b20a2289287a0838b",
+            "sha256": "sha256-n4uWikGg0Kcki/TvV4BiRO3/VE5M6/KopPncj5RQFAQ=",
+            "type": "git",
+            "url": "https://gitlab.com/leogx9r/ryzen_smu.git"
+        },
+        "version": "e61177d0ddaebfaeca52094b20a2289287a0838b"
+    }
+}

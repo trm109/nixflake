@@ -2,9 +2,13 @@
 {
   imports = [
     ./apps
+    ./assets
     ./core
-    ./hardware
     ./desktops
     ./development
+    ./hardware
+    ./hosts
+    ./overlays
+    ./users
   ];
 }
